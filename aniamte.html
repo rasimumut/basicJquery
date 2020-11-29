@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        #box  {
+            position: absolute;
+            top: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+        #header{
+            margin-top: 250px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        .btnbackground{
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<button id="animate"> Animate </button>
+<div id="box">
+</div>
+
+<body><h3 id="header">Jqery</h3>
+
+<ul id="liste">
+    <li class="eleman">Referance</li>
+    <li>Selector <a href="#"> link </a></li>
+    <li>Plugins</li>
+    <button class="btn"> butona bas</button>
+</ul>
+
+<p>
+AD:  <input type="text" class="control">
+</p>
+<p>
+Hobiler: <select class="control m-3">
+    <option value="spor" selected="selected" > spor </option>
+    <option value="sinema" > sinema </option>
+</p>
+</select>
+
+<p id="hideshow" > Jqery Animate</p>
+<button id="hide"> Hide</button>
+<button id="show"> Show</button>
+<button id="toggle1">Together</button>
+
+<br>
+
+<p id="effect1" > Jqery animate</p>
+<button id="slideup"> Slide UP</button>
+<button id="slidedown"> Slide Down</button>
+<button id="toggle2">Together</button>
+
+<br>
+
+<p id="effect2" > Jqery animate</p>
+<button id="fadein"> FadeIn</button>
+<button id="fadeout"> FadeOut</button>
+<button id="fadeto"> FadeTo</button>
+<button id="toggle3">Together</button>
+
+
+<script>
+
+    $(document).ready(function () {
+
+            $(".btn").click(function () {
+                $(this).addClass("btnbackground")
+                console.log("click çalıştı");
+            });
+
+            $(".control").change(function () {
+                $(this).val()
+                console.log($(this).val());
+            });
+            
+            $("#hide").click(function () {
+                $("#hideshow").hide("3000",function () {
+                    console.log("hide çalıştı");
+                });
+            });
+
+            $("#show").click(function () {
+                $("#hideshow").show("fast",function () {
+                    console.log("show çalıştı");
+                });
+            });
+
+            $("#toggle1").click(function () {
+                $("#hideshow").toggle("slow",function () {
+                    console.log("hide and show çalıştı");
+                });
+            });
+
+            $("#slideup").click(function () {
+                $("#effect1").slideUp(300,function () {
+                    console.log("slideUp çalıştı");
+                })
+            });
+
+            $("#slidedown").click(function () {
+                $("#effect1").slideDown(300,function () {
+                    console.log("slidDown çalıştı");
+                })
+            });
+
+            $("#toggle2").click(function () {
+                $("#effect1").slideToggle(300,function () {
+                    console.log("Toogle çalıştı");
+                })
+            });
+
+            $("#fadein").click(function () {
+                $("#effect2").fadeIn("slow",function () {
+                    console.log("fadeIn çalıştı");
+                });
+            });
+
+             $("#fadeout").click(function () {
+                 $("#effect2").fadeOut("slow",function () {
+                    console.log("fadeOut çalıştı");
+                });
+            });
+
+             $("#fadeto").click(function () {
+                 $("#effect2").fadeTo("slow", 0,function () {
+                    console.log("fadeTo çalıştı");
+                });
+             });
+
+
+              $("#toggle3").click(function () {
+                  $("#effect2").fadeToggle("slow",function () {
+                     console.log("fadeToggle çalıştı");
+                });
+              });
+
+                $("#animate").click(function () {
+                    $("#box").animate({
+                        left:'200px',
+
+                    },3000)
+
+                    $("#box").animate({
+                        width:'150px',
+                        height:'150px'
+
+                    },3000,function () {
+                        console.log("animasyon çalıştı");
+                    });
+                });
+
+
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>
